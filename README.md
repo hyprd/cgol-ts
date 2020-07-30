@@ -1,7 +1,7 @@
 # cgol-ts
-Conway's Game of Life js implementation using React
+Conway's Game of Life js implementation using React.
 
-Use yarn or npm
+Requires [npm](nodejs.org) and/or [yarn](https://yarnpkg.com/)
 
 `yarn` & `yarn start`
 
