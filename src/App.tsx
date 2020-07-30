@@ -17,10 +17,11 @@ const operations = [
 
 const generateEmptyGrid = () => {
   const rows = [];
-    for(let i = 0; i < nRows; i++) {
-      rows.push(Array.from(Array(nCols), () => 0));
-    }
-    return rows;
+  for(let i = 0; i < nRows; i++) {
+
+    rows.push(Array.from(Array(nCols), () => 0));
+  }
+  return rows;
 }
 
 const App : React.FC = () => {
@@ -81,7 +82,15 @@ const App : React.FC = () => {
       }}>
         { running ? 'stop simulation' : 'start simulation' } 
       </button>
-      <button onClick={() => { setGrid(generateEmptyGrid()) }}>Clear</button>
+      <button onClick={() => { setGrid(generateEmptyGrid()) }}>clear</button>
+      <button onClick={() => {
+        const rows = [];
+        for(let i = 0; i < nRows; i++) {
+  
+          rows.push(Array.from(Array(nCols), () => (Math.random() > 0.7 ? 1 : 0)));
+        }
+        setGrid(rows);
+      }}>randomize</button>
       <div style ={{
         display: 'grid',
         gridTemplateColumns: `repeat(${nCols}, 20px)`,
